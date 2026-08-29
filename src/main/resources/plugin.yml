@@ -1,0 +1,8 @@
+name: LegacyCombat
+version: '1.0-SNAPSHOT'
+main: fr.cozyhouse.legacyCombat.LegacyCombat
+api-version: '1.21'
+commands:
+  legacycombat:
+    description: initial plugin command
+    permission: legacycombat.admin
