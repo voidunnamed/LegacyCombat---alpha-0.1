@@ -1,10 +1,10 @@
 package fr.cozyhouse.legacyCombat.commands;
 
+import fr.cozyhouse.legacyCombat.LegacyCombat;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.permissions.PermissionAttachmentInfo;
 
 public class CommandManager implements CommandExecutor {
 
@@ -13,7 +13,17 @@ public class CommandManager implements CommandExecutor {
         if (!(commandSender instanceof Player player))
             return false;
 
-        player.sendMessage("Welcome in admin sevice !");
+        if (strings.length == 1){
+            switch (strings[0]) {
+                case "toggle-cooldown":
+                    LegacyCombat.cooldownModule.changeState(!LegacyCombat.cooldownModule.getState());
+                    break;
+                default:
+                    return false;
+            }
+        } else {
+            player.sendMessage("Welcome in admin sevice !");
+        }
         return true;
     }
 }

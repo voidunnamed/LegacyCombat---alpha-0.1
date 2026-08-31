@@ -11,6 +11,7 @@ import java.util.Objects;
 public final class LegacyCombat extends JavaPlugin {
 
     static public LegacyCombat plugin;
+    static public CooldownModule cooldownModule;
 
     @Override
     public void onEnable() {
@@ -20,6 +21,7 @@ public final class LegacyCombat extends JavaPlugin {
         Objects.requireNonNull(this.getCommand("legacycombat")).setExecutor(new CommandManager());
         this.getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
         this.getServer().getPluginManager().registerEvents(new EntityDamageByEntityListener(), this);
+        cooldownModule = new CooldownModule();
         // Plugin startup logic
     }
 
