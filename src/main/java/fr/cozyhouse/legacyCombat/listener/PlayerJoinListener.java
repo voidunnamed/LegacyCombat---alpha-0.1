@@ -14,5 +14,6 @@ public class PlayerJoinListener implements Listener {
             LegacyCombat.cooldownModule.neutralizer(e.getPlayer());
         else
             LegacyCombat.cooldownModule.activator(e.getPlayer());
+        LegacyCombat.reachModule.changeReach(e.getPlayer());
     }
 }

@@ -18,6 +18,9 @@ public class CommandManager implements CommandExecutor {
                 case "toggle-cooldown":
                     LegacyCombat.cooldownModule.changeState(!LegacyCombat.cooldownModule.getState());
                     break;
+                case "toggle-gapple-effect":
+                    LegacyCombat.gappleModule.changeVisualEffect();
+                    break;
                 default:
                     return false;
             }
